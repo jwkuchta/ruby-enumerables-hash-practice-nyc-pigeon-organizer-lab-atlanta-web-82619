@@ -23,9 +23,14 @@ def nyc_pigeon_organizer(data)
   data.each do |category, info|
     info.each do |key, value|
       value.each do |name|
-      if !pigeon_list(name)
-      pigeon_list[name] = {
-        category => ["key"]}
+      if !pigeon_list.has_key?(name)
+        pigeon_list[name] = {}
+      end
+      if !pigeon_list[name].has_key?(category)
+        pigeon_list[name][category] = []
+      end
+      if !pigeon_list[name][category].include?(key)
+        pigeon_list[name][category] = [key]
       end
       end
     end
