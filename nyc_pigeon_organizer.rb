@@ -21,14 +21,14 @@ pigeon_data = {
 def nyc_pigeon_organizer(data)
   pigeon_list = {}
   data.each do |category, info|
-    p "category, info", category, info
     info.each do |key, value|
       value.each do |name|
-      p "key, value", key, value
       if !pigeon_list(name)
       pigeon_list[name] = {
-        category => ["key"]
-      }
+        category => ["key"]}
+      end
+      end
     end
   end
+  pigeon_list
 end
