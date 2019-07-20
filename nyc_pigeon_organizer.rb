@@ -20,20 +20,21 @@ pigeon_data = {
 
 def nyc_pigeon_organizer(data)
   pigeon_list = {}
-  data.each do |category, info|
-    info.each do |key, value|
+  data.each do |category, attribute|
+    attribute.each do |attribute, value|
       value.each do |name|
-      if !pigeon_list.has_key?(name)
-        pigeon_list[name] = {}
-      end
-      if !pigeon_list[name].has_key?(category)
-        pigeon_list[name][category] = []
-      end
-      if !pigeon_list[name][category].include?(key)
-        pigeon_list[name][category] = [key.to_s]
-      end
+        if !pigeon_list.has_key?(name)
+          pigeon_list[name] = {}
+        end
+        if !pigeon_list[name].has_key!(category)
+          pigeon_list[name][category] = []
+        end
+        if !pigeon_list[name][attribute].include?(value)
+          pigeon_list[name][attribute] << value.to_s
+        end
       end
     end
   end
   pigeon_list
 end
+  
