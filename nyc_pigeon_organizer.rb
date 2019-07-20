@@ -30,7 +30,7 @@ def nyc_pigeon_organizer(data)
           pigeon_list[name][category] = []
         end
         if !pigeon_list[name][category].include?(property)
-          pigeon_list[name][category] = [property.to_s]
+          pigeon_list[name][category] << property.to_s
         end
       end
     end
