@@ -26,7 +26,7 @@ def nyc_pigeon_organizer(data)
       value.each do |name|
       p "key, value", key, value
       if !pigeon_list(name)
-      pigeon_list(name) = {
+      pigeon_list[name] = {
         category => ["key"]
       }
     end
